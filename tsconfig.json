@@ -4,6 +4,9 @@
     "module": "commonjs",
     "target": "ES2019",
     "esModuleInterop": true,
-    "allowJs": true
+    "allowJs": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strictPropertyInitialization": false
   }
 }
