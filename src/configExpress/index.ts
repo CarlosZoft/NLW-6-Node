@@ -1,6 +1,7 @@
 import express from "express";
-import testRouter from '../routes'
+import testRouter from '../routes';
 import "reflect-metadata";
+import "../database";
 
 export default () => {
   const app = express();
