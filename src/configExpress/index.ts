@@ -14,7 +14,7 @@ export default () => {
 
   app.use((error: HttpException, request: Request, response: Response, next: NextFunction) => {
     if (error instanceof Error) {
-      return response.status(error.status).json({ error: error.message });
+      return response.status(error.status || 406).json({ error: error.message });
     }
     return response.status(500).json({
       status: "error",
