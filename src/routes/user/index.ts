@@ -4,7 +4,7 @@ const router = Router();
 
 const createUserControleller = new CreateUserController();
 
-router.post("/", createUserControleller.create);
+router.post("/", createUserControleller.handle);
 
 
 
