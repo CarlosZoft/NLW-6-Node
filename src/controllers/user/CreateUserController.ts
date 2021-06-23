@@ -8,15 +8,11 @@ export class CreateUserController {
 
     const service = new CreateUserService();
 
-    try {
-      const user = await service.execute({ name, email, admin });
-      if (user) {
-        response.json(user);
-      }
-      next(new HttpException(406, "an error has occurred"));
+
+    const user = await service.execute({ name, email, admin });
+    if (user) {
+      response.json(user);
     }
-    catch (error) {
-      next(error);
-    }
+
   }
 }

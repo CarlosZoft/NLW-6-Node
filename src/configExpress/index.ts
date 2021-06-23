@@ -1,4 +1,5 @@
 import express, { NextFunction, Request, Response } from "express";
+import "express-async-errors";
 import userRoutes from '../routes/user';
 import "reflect-metadata";
 import "../database";
@@ -12,14 +13,13 @@ export default () => {
   app.use("/users", userRoutes);
 
   app.use((error: HttpException, request: Request, response: Response, next: NextFunction) => {
-    const status = error.status || 500;
-    const message = error.message || 'Something went wrong';
-    response
-      .status(status)
-      .send({
-        status,
-        message,
-      })
+    if (error instanceof Error) {
+      return response.status(error.status).json({ error: error.message });
+    }
+    return response.status(500).json({
+      status: "error",
+      message: "Internal Server Error"
+    })
   })
 
 
