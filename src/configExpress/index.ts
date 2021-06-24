@@ -3,6 +3,7 @@ import express, { NextFunction, Request, Response } from "express";
 import userRoutes from '../routes/user';
 import tagsRoutes from '../routes/tags';
 import authRoutes from '../routes/auth';
+import complimentRoutes from '../routes/compliment';
 import "reflect-metadata";
 import "../database";
 import HttpException from '../errors/HttpException';
@@ -13,6 +14,7 @@ export default () => {
 
   app.use(express.json());
 
+  app.use("/compliment", complimentRoutes);
   app.use("/auth", authRoutes);
   app.use("/users", userRoutes);
   app.use("/tags", tagsRoutes);
