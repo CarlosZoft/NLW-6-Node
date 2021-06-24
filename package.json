@@ -20,6 +20,7 @@
   "homepage": "https://github.com/CarlosZoft/NLW-6#readme",
   "devDependencies": {
     "@types/express": "^4.17.12",
+    "@types/jsonwebtoken": "^8.5.2",
     "@types/node": "^15.12.4",
     "@types/uuid": "^8.3.0",
     "ts-node-dev": "^1.1.6",
@@ -28,6 +29,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
+    "jsonwebtoken": "^8.5.1",
     "reflect-metadata": "^0.1.13",
     "sqlite3": "^5.0.2",
     "ts-node": "^10.0.0",
