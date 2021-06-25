@@ -15,7 +15,7 @@ export default function ensureAuthenticated(request: Request, response: Response
   const [, token] = authToken.split(" ");
 
   try {
-    const { sub } = verify(token, "8f57c2988ed3fa996e3b00719fb1f946") as IPayload
+    const { sub } = verify(token, process.env.SECRET_KEY) as IPayload
     request.user_id = sub;
     return next();
   } catch (err) {
