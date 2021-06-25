@@ -3,12 +3,7 @@ import { UserRepository } from '../../database/repository/UserRepository';
 import { getCustomRepository } from 'typeorm';
 import { compare } from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
-
-interface IAuthenticateRequest {
-  email: string;
-  password: string
-}
-
+import IAuthenticateRequest from '../../dtos/IAuthenticateRequest'
 export class AuthenticateUserService {
 
   async execute({ email, password }: IAuthenticateRequest) {

@@ -2,15 +2,7 @@ import { getCustomRepository } from 'typeorm';
 import { ComplimentsRepository } from '../../database/repository/ComplimentsRepository';
 import { UserRepository } from '../../database/repository/UserRepository';
 import HttpException from '../../errors/HttpException'
-
-interface IComplimentRequest {
-  tag_id: string;
-  user_sender: string;
-  user_receiver: string;
-  message: string;
-}
-
-
+import IComplimentRequest from '../../dtos/IComplimentRequest';
 export class CreateComplimentService {
   async execute({ tag_id, user_sender, user_receiver, message }: IComplimentRequest) {
     const complimentRepository = getCustomRepository(ComplimentsRepository);

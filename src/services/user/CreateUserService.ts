@@ -2,14 +2,7 @@ import { UserRepository } from '../../database/repository/UserRepository';
 import { getCustomRepository } from 'typeorm';
 import { hash } from 'bcryptjs';
 import HttpException from '../../errors/HttpException';
-
-
-interface IUserRequest {
-  name: string;
-  email: string;
-  admin?: boolean;
-  password: string;
-}
+import IUserRequest from '../../dtos/IUserRequest';
 
 export class CreateUserService {
   async execute({ name, email, admin = false, password }: IUserRequest) {
