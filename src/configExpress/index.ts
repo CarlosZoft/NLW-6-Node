@@ -1,11 +1,11 @@
-import "express-async-errors";
 import express, { NextFunction, Request, Response } from "express";
+import "express-async-errors";
+import "reflect-metadata";
+import "../database";
 import userRoutes from '../routes/user';
 import tagsRoutes from '../routes/tags';
 import authRoutes from '../routes/auth';
 import complimentRoutes from '../routes/compliment';
-import "reflect-metadata";
-import "../database";
 import HttpException from '../errors/HttpException';
 
 
